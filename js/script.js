@@ -30,7 +30,7 @@ STEPS
 
 const km = prompt('Quanti km devi percorrere?');
 console.log('km', km, typeof km);
-
+// trasformare valore in numero
 const kmNumber = parseInt(km);
 console.log('kmNumber', kmNumber, typeof kmNumber);
 
@@ -38,49 +38,64 @@ console.log('kmNumber', kmNumber, typeof kmNumber);
 
 const age = prompt('Qual è la tua età?');
 console.log('age', age, typeof age);
-
+// trasformare valore in numero
 const ageNumber = parseInt(age);
 console.log('ageNumber', ageNumber, typeof ageNumber);
 
 // Step 3
 
-if (age < 18) {
-    console.log('Minorenne sconto 20%');
+if (ageNumber < 18) {
+    console.log('Minorenne sconto del 20%');
 
     const price = kmNumber * 0.21;
     console.log('price', price, typeof price);
 
     // Step 4
+    // Sconto del 20%
 
     const discount = (price / 100) * 20;
     console.log('discount', discount, typeof discount);
 
-    const finalPrice = price - discount;
+    const discountedPrice = price - discount;
+    console.log('discountedPricee', discountedPrice, typeof discountedPrice)
 
-    alert('Il prezzo del biglietto è di €' + finalPrice.toFixed(2));
+    // Step 5
+    alert('Il prezzo del biglietto è di €' + discountedPrice.toFixed(2));
 
-    document.getElementById('costo-biglietto').innerHTML = finalPrice
+    // Step 6
+    document.getElementById('costo-biglietto').innerHTML = discountedPrice.toFixed(2);
 }
-else if (age > 65) {
+
+else if (ageNumber > 65) {
     console.log('Over 65 sconto 40%');
 
     const price = kmNumber * 0.21;
     console.log('price', price, typeof price);
 
     // Step 4
+    // Sconto del 40%
 
     const discount = (price / 100) * 40;
     console.log('discount', discount, typeof discount);
 
-    const finalPrice = price - discount;
+    const discountedPrice = price - discount;
 
-    alert('Il prezzo del biglietto è di €' + finalPrice.toFixed(2));
+    // Step 5
+    alert('Il prezzo del biglietto è di €' + discountedPrice.toFixed(2));
+
+    // Step 6
+    document.getElementById('costo-biglietto').innerHTML = discountedPrice.toFixed(2);
 }
+
 else {
     console.log('Pagare prezzo pieno');
 
     const price = kmNumber * 0.21;
     console.log('price', price, typeof price);
 
-    alert('Il prezzo del biglietto è di €' + finalPrice.toFixed(2));
+    // Step 5
+    alert('Il prezzo del biglietto è di €' + price.toFixed(2));
+
+    // Step 6
+    document.getElementById('costo-biglietto').innerHTML = price.toFixed(2);
 }
